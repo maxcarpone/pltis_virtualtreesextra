@@ -11,7 +11,7 @@ interface
 
 uses
   Forms, LCLIntf, Classes, SysUtils, VirtualTrees, LMessages, StdCtrls, Graphics,
-  DbCtrls, db, Controls;
+  DbCtrls, db, Controls, Types;
 
 type
 

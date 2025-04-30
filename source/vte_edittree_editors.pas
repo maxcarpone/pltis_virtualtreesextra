@@ -13,7 +13,7 @@ uses
   LCLIntf, LCLType, LMessages,
   Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, VirtualTrees, Buttons, ExtCtrls, ComCtrls, Spin,EditBtn,
-  TypInfo;
+  TypInfo, Types;
 
 type
 
