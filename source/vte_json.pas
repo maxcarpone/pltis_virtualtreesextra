@@ -10,7 +10,7 @@ unit vte_json;
 interface
 
 uses
-  Classes, SysUtils, VirtualTrees, fpjson, Controls;
+  Classes, SysUtils, VirtualTrees, fpjson, Controls, LazVersion, LCLVersion;
 
 type
 
@@ -1330,10 +1330,10 @@ var
 begin
   if AMode in [lapAutoAdjustForDPI] then
   begin
-    Header.MaxHeight:=round(Header.MaxHeight * AXProportion)-Header.MaxHeight+1;
-    Header.DefaultHeight:=round(Header.DefaultHeight * AXProportion)-Header.DefaultHeight+1;
-    Header.Height:=round(Header.Height * AXProportion)-Header.Height+1;
-    Header.MinHeight:=round(Header.MinHeight * AXProportion)-Header.MinHeight+1;
+    Header.MaxHeight:=round(Header.MaxHeight * AYProportion)-Header.MaxHeight+1;
+    Header.DefaultHeight:=round(Header.DefaultHeight * AYProportion)-Header.DefaultHeight+1;
+    Header.Height:=round(Header.Height * AYProportion)-Header.Height+1;
+    Header.MinHeight:=round(Header.MinHeight * AYProportion)-Header.MinHeight+1;
 
     for i := 0 to header.Columns.Count-1 do
     begin
