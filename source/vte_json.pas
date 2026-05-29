@@ -10,7 +10,7 @@ unit vte_json;
 interface
 
 uses
-  Classes, SysUtils, VirtualTrees, fpjson, Controls, LazVersion, LCLVersion;
+  Classes, SysUtils, VirtualTrees, fpjson, Controls, LazVersion, LCLVersion, math;
 
 type
 
@@ -1328,12 +1328,12 @@ procedure TVirtualJSONInspector.DoAutoAdjustLayout(
 var
   i: Integer;
 begin
-  if AMode in [lapAutoAdjustForDPI] then
+  if (AMode in [lapAutoAdjustForDPI]) then
   begin
-    Header.MaxHeight:=round(Header.MaxHeight * AYProportion)-Header.MaxHeight+1;
-    Header.DefaultHeight:=round(Header.DefaultHeight * AYProportion)-Header.DefaultHeight+1;
-    Header.Height:=round(Header.Height * AYProportion)-Header.Height+1;
-    Header.MinHeight:=round(Header.MinHeight * AYProportion)-Header.MinHeight+1;
+    Header.MinHeight := max(18,round(Header.MinHeight * AYProportion));
+    Header.MaxHeight := max(18,round(Header.MaxHeight * AYProportion));
+    Header.DefaultHeight := max(18,round(Header.DefaultHeight * AYProportion));
+    Header.Height := max(18,round(Header.Height * AYProportion));
 
     for i := 0 to header.Columns.Count-1 do
     begin
